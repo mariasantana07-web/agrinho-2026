@@ -29,6 +29,7 @@ Para este projeto, foram utilizadas as seguintes tecnologias:
 
 ## 📂 Como visualizar o projeto
 
-1. Faça o download ou clone este repositório:
+1- Copie o link abaixo e cole na aba de pesquisa do Google.
+
    ```bash
-   git clone [[https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git](https://mariasantana07-web.github.io/agrinho-2026/)]([https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git](https://mariasantana07-web.github.io/agrinho-2026/))
+   git clone [https://mariasantana07-web.github.io/agrinho-2026/]
