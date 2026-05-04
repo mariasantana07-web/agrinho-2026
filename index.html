@@ -3,54 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agrinho 2026 | Agro Forte, Futuro Sustentável</title>
+  <title>Agro Forte • Futuro Sustentável</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #e6f4e6, #f4f9f4);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      line-height: 1.8;
       color: #333;
-      line-height: 1.6;
+      background: #f8f9f8;
     }
     header {
-      background: linear-gradient(135deg, #2e7d32, #4caf50);
+      background: linear-gradient(135deg, #1e5c2b, #2e7d32);
       color: white;
       text-align: center;
-      padding: 2rem 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-    .hero {
-      background: url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1600') center/cover no-repeat;
-      height: 70vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      text-shadow: 0 3px 10px rgba(0,0,0,0.7);
-      position: relative;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.4);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 900px;
-      padding: 2rem;
+      padding: 4.5rem 1rem;
     }
     h1 {
-      font-size: 3.2rem;
-      margin-bottom: 1rem;
+      font-size: 3rem;
+      margin-bottom: 0.8rem;
     }
     h2 {
-      color: #2e7d32;
-      text-align: center;
-      margin: 3rem 0 2rem;
+      color: #1e5c2b;
       font-size: 2.2rem;
+      margin: 3.5rem 0 1.8rem;
+      text-align: center;
     }
     .container {
       max-width: 1100px;
@@ -59,109 +35,139 @@
     }
     .section {
       padding: 4rem 0;
+      border-bottom: 1px solid #e0e0e0;
     }
-    .card {
+    .last { border-bottom: none; }
+    p {
+      font-size: 1.12rem;
+      margin-bottom: 1.3rem;
+    }
+    .highlight {
+      background: #e8f5e9;
+      padding: 2.2rem;
+      border-left: 7px solid #2e7d32;
+      border-radius: 8px;
+      margin: 2.5rem 0;
+      font-size: 1.15rem;
+    }
+    .tips {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.8rem;
+      margin-top: 2rem;
+    }
+    .tip-card {
       background: white;
-      border-radius: 15px;
       padding: 2rem;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      margin-bottom: 2rem;
-      transition: transform 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-10px);
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     }
     footer {
-      background: #1b5e20;
+      background: #1e5c2b;
       color: white;
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 3.5rem 1rem;
       margin-top: 3rem;
     }
-    .btn {
+    .top-btn {
       display: inline-block;
-      background: #ff9800;
+      background: #2e7d32;
       color: white;
-      padding: 12px 30px;
+      padding: 14px 40px;
       border-radius: 50px;
       text-decoration: none;
       font-weight: bold;
-      margin-top: 20px;
-      transition: 0.3s;
+      margin-top: 25px;
+      transition: all 0.3s;
     }
-    .btn:hover {
-      background: #f57c00;
-      transform: scale(1.05);
+    .top-btn:hover {
+      background: #164721;
+      transform: translateY(-4px);
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>🌱 Agrinho 2026</h1>
-    <p><strong>Agro forte, futuro sustentável:</strong><br>Equilíbrio entre produção e meio ambiente</p>
+    <h1>Agro Forte</h1>
+    <p style="font-size:1.6rem; max-width:850px; margin:0 auto;">
+      Futuro Sustentável<br>
+      <strong>Equilíbrio entre produção e meio ambiente</strong>
+    </p>
   </header>
-
-  <div class="hero">
-    <div class="hero-content">
-      <h1>Agro Forte,<br>Futuro Sustentável</h1>
-      <p style="font-size:1.4rem;">Produzir com responsabilidade para preservar o planeta</p>
-      <a href="#conteudo" class="btn">Conheça o Tema</a>
-    </div>
-  </div>
 
   <div class="container">
 
-    <section class="section" id="conteudo">
-      <h2>Sobre o Tema</h2>
-      <div class="card">
-        <p>O tema do Agrinho 2026 nos convida a refletir sobre a importância de uma agricultura forte e moderna, aliada à preservação do meio ambiente. É possível produzir alimentos de qualidade respeitando a natureza, o solo, a água e a biodiversidade.</p>
+    <section class="section">
+      <h2>Produzir mais, preservando melhor</h2>
+      <p>É possível ter uma agricultura forte, moderna e altamente produtiva sem destruir o meio ambiente. Na verdade, o futuro da produção de alimentos depende exatamente desse equilíbrio.</p>
+      <p>Este espaço foi criado para refletir, aprender e incentivar práticas que unem produtividade com responsabilidade ambiental.</p>
+      
+      <div class="highlight">
+        O grande desafio atual não é escolher entre produzir ou preservar. 
+        O caminho é fazer os dois ao mesmo tempo, de forma inteligente.
       </div>
     </section>
 
     <section class="section">
-      <h2>Por que esse equilíbrio é importante?</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-        
-        <div class="card">
-          <h3>🌾 Produção Responsável</h3>
-          <p>Técnicas modernas que aumentam a produtividade sem degradar o solo.</p>
-        </div>
+      <h2>Por que esse equilíbrio é tão importante?</h2>
+      <p>Com o crescimento da população mundial, a demanda por alimentos, fibras e energia aumenta a cada ano. Ao mesmo tempo, estamos enfrentando mudanças climáticas, escassez de água e perda de solos férteis.</p>
+      <p>A agricultura sustentável surge como solução: produzir mais utilizando menos recursos e causando menor impacto ambiental.</p>
+    </section>
 
-        <div class="card">
-          <h3>🌳 Preservação Ambiental</h3>
-          <p>Matas ciliares, plantio de árvores e proteção das nascentes.</p>
+    <section class="section">
+      <h2>Práticas que fazem a diferença</h2>
+      <div class="tips">
+        <div class="tip-card">
+          <h3>🌱 Manejo do Solo</h3>
+          <p>Plantio direto, rotação de culturas e cobertura permanente do solo para manter a fertilidade e evitar erosão.</p>
         </div>
-
-        <div class="card">
-          <h3>💧 Uso Consciente da Água</h3>
-          <p>Irrigação eficiente e combate ao desperdício.</p>
+        <div class="tip-card">
+          <h3>💧 Uso inteligente da água</h3>
+          <p>Irrigação por gotejamento, sensores de umidade e técnicas que podem reduzir o consumo de água em até 70%.</p>
         </div>
-
-        <div class="card">
-          <h3>🐝 Biodiversidade</h3>
-          <p>Polinização, controle biológico e equilíbrio dos ecossistemas.</p>
+        <div class="tip-card">
+          <h3>🐞 Controle biológico</h3>
+          <p>Uso de insetos benéficos e produtos naturais no lugar de agrotóxicos químicos.</p>
+        </div>
+        <div class="tip-card">
+          <h3>🌳 Preservação ambiental</h3>
+          <p>Manutenção de matas ciliares, reservas legais e plantio de árvores para proteger a biodiversidade.</p>
+        </div>
+        <div class="tip-card">
+          <h3>♻️ Economia circular</h3>
+          <p>Transformação de resíduos em adubo, bioenergia e novos insumos.</p>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Como podemos contribuir?</h2>
-      <ul style="font-size:1.2rem; line-height:2.2rem; max-width:800px; margin:0 auto;">
-        <li>🌱 Plantar árvores e hortas escolares</li>
-        <li>♻️ Fazer compostagem e reciclagem</li>
-        <li>💦 Economizar água em casa e na escola</li>
-        <li>🗣️ Divulgar a importância da agricultura sustentável</li>
-        <li>🥕 Consumir alimentos locais e da estação</li>
-      </ul>
+    <section class="section last">
+      <h2>O que cada um de nós pode fazer?</h2>
+      <div class="tips">
+        <div class="tip-card">
+          <h3>🏫 Na escola ou faculdade</h3>
+          <p>Criar hortas, composteira, projetos de educação ambiental e mutirões de plantio.</p>
+        </div>
+        <div class="tip-card">
+          <h3>🏠 No dia a dia</h3>
+          <p>Economizar água, reduzir desperdício de alimentos, comprar de produtores locais e separar o lixo corretamente.</p>
+        </div>
+        <div class="tip-card">
+          <h3>🌍 Na comunidade</h3>
+          <p>Participar de ações ambientais, divulgar boas práticas e apoiar a agricultura responsável.</p>
+        </div>
+      </div>
     </section>
 
   </div>
 
   <footer>
-    <p><strong>Agrinho 2026 • Paraná</strong></p>
-    <p>Produzir hoje pensando no amanhã 🌍</p>
-    <p style="margin-top:15px; font-size:0.9rem;">Feito com ❤️ para o Agrinho</p>
+    <p><strong>Agro Forte • Futuro Sustentável</strong></p>
+    <p>Produzir com responsabilidade. Preservar com consciência.</p>
+    <a href="#" class="top-btn">↑ Voltar ao Início</a>
+    <p style="margin-top: 30px; font-size: 0.95rem; opacity: 0.9;">
+      Criado com dedicação ao futuro do nosso campo e do nosso planeta
+    </p>
   </footer>
 
 </body>
