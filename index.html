@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agrinho 2026 • Sustentabilidade no Campo</title>
+    <title>Agrinho 2026 • Maria Eduarda</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #1b4332; /* Verde Floresta */
+            --primary: #0b3d2e;
             --secondary: #2d6a4f;
-            --accent: #74c69d;
-            --bg: #f9fbf9;
-            --text: #081c15;
+            --accent: #95d5b2;
+            --text: #1b4332;
+            --bg: #f0f4f1;
             --white: #ffffff;
         }
 
@@ -21,242 +21,225 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             background-color: var(--bg);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.7;
+            overflow-x: hidden;
         }
 
-        /* --- Header / Hero --- */
-        header {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80') center/cover;
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             color: var(--white);
-            padding: 0 20px;
+            padding: 20px;
         }
 
-        header h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3rem, 10vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeIn 1.5s ease;
         }
 
-        header p {
-            font-size: clamp(1rem, 3vw, 1.25rem);
+        .hero p {
+            font-size: clamp(1rem, 4vw, 1.5rem);
             max-width: 700px;
+            font-weight: 300;
             opacity: 0.9;
         }
 
-        /* --- Container Principal --- */
-        .main-container {
-            max-width: 1100px;
+        /* --- Seções Estilizadas --- */
+        .content {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 80px 25px;
         }
 
-        /* --- Seções de Informação --- */
-        .info-section {
-            margin-bottom: 80px;
+        .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
+            transform: translateY(50px);
+            transition: all 1s ease-out;
+            margin-bottom: 100px;
         }
 
-        .info-section.visible {
+        .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .section-tag {
-            color: var(--secondary);
-            font-weight: 800;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            font-size: 2rem;
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
             color: var(--primary);
-            margin-bottom: 25px;
+            margin-bottom: 3rem;
+            text-align: center;
         }
 
-        /* --- Grid de Conhecimento --- */
-        .knowledge-grid {
+        /* --- Grid de Cards --- */
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+            gap: 2rem;
         }
 
-        .info-card {
+        .card {
             background: var(--white);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-            border-left: 5px solid var(--accent);
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border: 1px solid rgba(0,0,0,0.03);
         }
 
-        .info-card h3 {
-            margin-bottom: 15px;
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(11, 61, 46, 0.1);
+        }
+
+        .card h3 {
             color: var(--secondary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        /* --- Imagens Inteligentes (Não bugam) --- */
-        .image-container {
+        /* --- Galeria --- */
+        .image-box {
             width: 100%;
-            border-radius: 20px;
+            height: 500px;
+            border-radius: 30px;
             overflow: hidden;
-            margin: 30px 0;
-            aspect-ratio: 16 / 9; /* Mantém a proporção sempre correta */
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
         }
 
-        .image-container img {
+        .image-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 1s ease;
         }
 
-        /* --- Guia Prático --- */
-        .guide-box {
-            background: var(--primary);
-            color: var(--white);
-            padding: 40px;
-            border-radius: 25px;
-            margin-top: 40px;
+        .image-box:hover img {
+            transform: scale(1.1);
         }
 
-        .guide-list {
-            list-style: none;
-            margin-top: 20px;
-        }
-
-        .guide-list li {
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            display: flex;
-            gap: 15px;
-        }
-
-        /* --- Footer e Botão --- */
+        /* --- Footer Especial --- */
         footer {
-            background: #081c15;
+            background: var(--primary);
             color: var(--white);
             padding: 80px 20px 40px;
             text-align: center;
-            position: relative;
+            border-radius: 50px 50px 0 0;
         }
 
-        .scroll-top {
-            width: 50px;
-            height: 50px;
+        .back-to-top {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
             background: var(--accent);
-            border: none;
-            border-radius: 50%;
             color: var(--primary);
+            border-radius: 50%;
+            text-decoration: none;
             font-size: 1.5rem;
-            cursor: pointer;
-            position: absolute;
-            top: -25px;
-            left: 50%;
-            transform: translateX(-50%);
+            margin-bottom: 30px;
             transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            border: none;
         }
 
-        .scroll-top:hover { background: var(--white); transform: translateX(-50%) translateY(-5px); }
+        .back-to-top:hover {
+            transform: scale(1.1) rotate(-10deg);
+            background: var(--white);
+        }
 
         .signature {
-            margin-top: 50px;
-            font-size: 1.1rem;
-            font-weight: 300;
-            letter-spacing: 1px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 30px;
-            display: inline-block;
+            margin-top: 40px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.8;
         }
 
-        /* Responsividade */
+        /* Animação */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         @media (max-width: 768px) {
-            header { height: 60vh; }
-            h2 { font-size: 1.6rem; }
+            .hero h1 { font-size: 2.8rem; }
+            .image-box { height: 300px; }
         }
     </style>
 </head>
 <body>
 
-    <header id="inicio">
-        <h1>Agro Forte</h1>
-        <p>Entendendo como a tecnologia e a preservação garantem o alimento de amanhã.</p>
-    </header>
+    <section class="hero" id="topo">
+        <h1>O Futuro é Verde</h1>
+        <p>Inovação, sustentabilidade e tecnologia transformando o campo para as próximas gerações.</p>
+    </section>
 
-    <main class="main-container">
+    <div class="content">
         
-        <section class="info-section">
-            <span class="section-tag">Conceito Principal</span>
-            <h2>O que é o Agro Sustentável?</h2>
-            <p>Diferente do que muitos pensam, a agricultura sustentável não é "deixar de produzir", mas sim produzir de forma inteligente. Ela se baseia no tripé: **Econômico** (ser lucrativo), **Social** (ajudar a comunidade) e **Ambiental** (proteger a terra).</p>
-            
-            <div class="image-container">
-                <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=1200&q=80" alt="Plantação verde">
+        <section class="reveal">
+            <h2 class="section-title">Equilíbrio Vital</h2>
+            <div class="image-box">
+                <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=1200&q=80" alt="Natureza e Agro">
+            </div>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem;">
+                A agricultura moderna não escolhe entre produzir e preservar. Ela faz os dois. Através do manejo inteligente, garantimos solo fértil e biodiversidade preservada para o amanhã.
+            </p>
+        </section>
+
+        <section class="reveal">
+            <h2 class="section-title">Pilares do Amanhã</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>🛰️ Tecnologia</h3>
+                    <p>Drones e sensores que monitoram a saúde da planta folha por folha, reduzindo desperdícios.</p>
+                </div>
+                <div class="card">
+                    <h3>💧 Água Viva</h3>
+                    <p>Sistemas de reaproveitamento e irrigação por gotejamento que protegem nossos rios.</p>
+                </div>
+                <div class="card">
+                    <h3>♻️ Regeneração</h3>
+                    <p>O solo não é apenas suporte, é vida. O plantio direto devolve nutrientes à terra naturalmente.</p>
+                </div>
             </div>
         </section>
 
-        <section class="info-section">
-            <span class="section-tag">Como Ajudar</span>
-            <h2>Práticas que Transformam o Campo</h2>
-            <div class="knowledge-grid">
-                <div class="info-card">
-                    <h3>🌱 Plantio Direto</h3>
-                    <p>Consiste em plantar sobre a palha da colheita anterior. Isso mantém a umidade do solo, evita a erosão e reduz o uso de máquinas.</p>
-                </div>
-                <div class="info-card">
-                    <h3>🔄 Rotação de Culturas</h3>
-                    <p>Alternar o que se planta (ex: soja e depois milho) ajuda o solo a recuperar nutrientes naturalmente, combatendo pragas sem venenos químicos.</p>
-                </div>
-                <div class="info-card">
-                    <h3>🐞 Controle Biológico</h3>
-                    <p>Uso de "inimigos naturais" (como joaninhas ou fungos bons) para combater lagartas e insetos que estragam a plantação.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="info-section guide-box">
-            <span class="section-tag" style="color: var(--accent);">Guia Rápido</span>
-            <h2>Como podemos contribuir?</h2>
-            <ul class="guide-list">
-                <li><strong>1. Preservação de Nascentes:</strong> Manter a mata em volta dos rios garante água limpa para todos.</li>
-                <li><strong>2. Tecnologia de Precisão:</strong> Usar drones para saber exatamente onde colocar adubo, evitando desperdício.</li>
-                <li><strong>3. Coleta Seletiva:</strong> No campo, o descarte correto de embalagens de produtos é vital para não poluir o lençol freático.</li>
-            </ul>
-        </section>
-
-    </main>
+    </div>
 
     <footer>
-        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="scroll-top">↑</button>
+        <button onclick="scrollToTop()" class="back-to-top" title="Voltar ao início">↑</button>
         
-        <p style="font-weight: 800; font-size: 1.4rem; margin-bottom: 10px;">AGRINHO 2026</p>
-        <p style="opacity: 0.7;">Semeando conhecimento para colher um mundo melhor.</p>
+        <p style="font-size: 1.4rem; font-weight: 700;">Agrinho 2026</p>
+        <p style="opacity: 0.7; margin-bottom: 20px;">Semeando ideias, colhendo um mundo melhor.</p>
+        
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); max-width: 300px; margin: 0 auto;">
         
         <div class="signature">
             Agrinho 2026 - Maria Eduarda
@@ -264,19 +247,28 @@
     </footer>
 
     <script>
-        // Função para mostrar as seções conforme o usuário desce a página
-        const observerOptions = { threshold: 0.15 };
+        // Função para o scroll suave ao topo
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Sistema de revelação das seções ao rolar a página
+        const observerOptions = {
+            threshold: 0.2
+        };
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                    entry.target.classList.add('active');
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.info-section').forEach(section => {
-            observer.observe(section);
-        });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 
 </body>
