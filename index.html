@@ -4,39 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agro Forte • Futuro Sustentável</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+  
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      line-height: 1.8;
-      color: #333;
-      background: #f8f9f8;
-      scroll-behavior: smooth;
+    :root {
+      --primary: #1e5c2b;
+      --secondary: #2e7d32;
+      --accent: #a5d6a7;
+      --bg-light: #f4f7f4;
+      --text-dark: #2d3436;
+      --white: #ffffff;
     }
 
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth; /* Isso garante o deslize suave nativo */
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background: var(--bg-light);
+      overflow-x: hidden;
+    }
+
+    /* --- Header Estilizado --- */
     header {
-      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), 
-                  url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1600') center/cover no-repeat;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                  url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1600') center/cover no-repeat fixed;
       color: white;
       text-align: center;
-      padding: 6rem 1rem 5rem;
-      position: relative;
+      padding: 8rem 1rem;
+      clip-path: ellipse(150% 100% at 50% 0%); /* Efeito curvo sutil no fundo */
     }
 
-    h1 {
-      font-size: 3.3rem;
-      margin-bottom: 0.8rem;
-      animation: fadeInDown 1.2s ease forwards;
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.5rem, 8vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 1rem;
+      animation: fadeInUp 1s ease-out;
     }
 
-    .container { max-width: 1150px; margin: 0 auto; padding: 0 20px; }
+    header p {
+      font-size: 1.4rem;
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    /* --- Container e Seções --- */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
     .section {
-      padding: 5rem 0;
-      border-bottom: 1px solid #e0e0e0;
+      padding: 6rem 0;
       opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.9s ease;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
     }
 
     .section.visible {
@@ -45,151 +72,193 @@
     }
 
     h2 {
-      color: #1e5c2b;
-      font-size: 2.3rem;
-      margin-bottom: 2rem;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 2.5rem;
       text-align: center;
+      position: relative;
     }
 
-    .highlight {
-      background: #e8f5e9;
-      padding: 2.5rem;
-      border-left: 7px solid #2e7d32;
-      border-radius: 12px;
-      margin: 3rem 0;
-      font-size: 1.2rem;
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--secondary);
+      margin: 10px auto 0;
+      border-radius: 2px;
     }
 
-    .tips {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .tip-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.09);
-      transition: all 0.4s ease;
-    }
-
-    .tip-card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    /* --- Imagens com Hover --- */
+    .img-wrapper {
+      overflow: hidden;
+      border-radius: 20px;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 
     .photo {
       width: 100%;
-      height: 320px;
+      height: 400px;
       object-fit: cover;
-      border-radius: 12px;
-      margin: 1.5rem 0;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      display: block;
+      transition: transform 0.6s ease;
     }
 
+    .img-wrapper:hover .photo {
+      transform: scale(1.05);
+    }
+
+    /* --- Cards de Dicas --- */
+    .tips {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .tip-card {
+      background: var(--white);
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .tip-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(30, 92, 43, 0.15);
+    }
+
+    .tip-card h3 {
+      color: var(--secondary);
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+
+    /* --- Footer e Botão --- */
     footer {
-      background: #1e5c2b;
+      background: var(--primary);
       color: white;
       text-align: center;
-      padding: 4rem 1rem;
-      margin-top: 3rem;
+      padding: 5rem 1rem;
+      margin-top: 4rem;
     }
 
     .top-btn {
       display: inline-block;
-      background: #2e7d32;
-      color: white;
-      padding: 15px 45px;
+      background: var(--white);
+      color: var(--primary);
+      padding: 18px 40px;
       border-radius: 50px;
       text-decoration: none;
-      font-weight: bold;
-      margin-top: 25px;
-      transition: all 0.4s ease;
+      font-weight: 700;
+      margin: 30px 0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
     }
 
     .top-btn:hover {
-      background: #164721;
-      transform: translateY(-5px);
+      background: var(--accent);
+      transform: scale(1.05);
     }
 
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-60px); }
+    /* --- Animações --- */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      header { padding: 5rem 1rem; }
+      h2 { font-size: 1.8rem; }
+      .photo { height: 250px; }
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <header id="inicio">
     <h1>Agro Forte</h1>
-    <p style="font-size:1.7rem; max-width:950px; margin:0 auto;">
-      Futuro Sustentável<br>
-      <strong>Equilíbrio entre produção e meio ambiente</strong>
-    </p>
+    <p>O equilíbrio perfeito entre a potência da produção e o respeito à biodiversidade.</p>
   </header>
 
   <div class="container">
 
     <section class="section">
       <h2>Produzir mais, preservando melhor</h2>
-      <img src="https://images.unsplash.com/photo-1592982537447-6f2a6a0c7c18?w=1200" alt="Agricultura sustentável" class="photo">
-      <p>É totalmente possível ter uma agricultura forte, moderna e produtiva, ao mesmo tempo em que cuidamos do solo, da água e da biodiversidade.</p>
-      <p>Este é o grande desafio e também a grande oportunidade do nosso tempo.</p>
+      <div class="img-wrapper">
+        <img src="https://images.unsplash.com/photo-1592982537447-6f2a6a0c7c18?w=1200" alt="Agricultura sustentável" class="photo">
+      </div>
+      <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+        Acreditamos na tecnologia como aliada da natureza. É possível nutrir o mundo mantendo a saúde do solo e a pureza das nossas águas.
+      </p>
     </section>
 
     <section class="section">
-      <h2>Práticas que estão transformando o campo</h2>
-      
-      <img src="https://images.unsplash.com/photo-1622388836886-9f6e5e0f5c0f?w=1200" alt="Plantio direto" class="photo">
+      <h2>Inovação no Campo</h2>
       <div class="tips">
-        <div class="tip-card"><h3>🌱 Manejo Conservacionista</h3><p>Plantio direto, rotação de culturas e cobertura do solo.</p></div>
-        <div class="tip-card"><h3>💧 Irrigação Inteligente</h3><p>Técnicas que economizam até 70% de água.</p></div>
-        <div class="tip-card"><h3>🐞 Controle Biológico</h3><p>Uso de insetos benéficos e produtos naturais.</p></div>
+        <div class="tip-card">
+          <h3>🌱 Manejo Ativo</h3>
+          <p>Técnicas de plantio direto que regeneram a matéria orgânica do solo.</p>
+        </div>
+        <div class="tip-card">
+          <h3>💧 Precisão Hídrica</h3>
+          <p>Irrigação inteligente monitorada por sensores para desperdício zero.</p>
+        </div>
+        <div class="tip-card">
+          <h3>🐞 BioDefesa</h3>
+          <p>Equilíbrio natural através do controle biológico e redução de químicos.</p>
+        </div>
       </div>
     </section>
 
     <section class="section">
-      <h2>Preservação e Produção andando juntas</h2>
-      <img src="https://images.unsplash.com/photo-1500937386664-56d1df7c3e7c?w=1200" alt="Agricultura e natureza" class="photo">
-      <p>Manter matas ciliares, áreas de reserva legal e plantar árvores não é apenas proteção ambiental — é investimento no futuro da própria produção.</p>
-    </section>
-
-    <section class="section last">
-      <h2>O que cada um pode fazer?</h2>
-      <div class="tips">
-        <div class="tip-card"><h3>🏫 Na Escola</h3><p>Horta escolar, composteira e mutirões de plantio.</p></div>
-        <div class="tip-card"><h3>🏠 Em Casa</h3><p>Economizar água, reduzir desperdício e consumir produtos locais.</p></div>
-        <div class="tip-card"><h3>🌍 Na Comunidade</h3><p>Participar de ações ambientais e divulgar boas práticas.</p></div>
+      <h2>Consciência em Ação</h2>
+      <div class="img-wrapper">
+        <img src="https://images.unsplash.com/photo-1500937386664-56d1df7c3e7c?w=1200" alt="Agricultura e natureza" class="photo">
       </div>
+      <p style="text-align: center;">Preservar áreas de mata ciliar não é um custo, é um seguro contra pragas e secas extremas.</p>
     </section>
 
   </div>
 
   <footer>
-    <p><strong>Agro Forte • Futuro Sustentável</strong></p>
-    <p>Produzir com responsabilidade. Preservar com consciência.</p>
-    <a href="#" class="top-btn">↑ Voltar ao Início</a>
-    <p style="margin-top: 35px; font-size: 0.95rem; opacity: 0.9;">
-      Criado com carinho pelo futuro do nosso campo e do nosso planeta
+    <p style="font-size: 1.5rem; letter-spacing: 1px;"><strong>AGRO FORTE</strong></p>
+    <p>Semeando responsabilidade, colhendo o futuro.</p>
+    
+    <a href="#inicio" class="top-btn" id="btnScroll">↑ VOLTAR AO TOPO</a>
+    
+    <p style="margin-top: 40px; font-size: 0.85rem; opacity: 0.7;">
+      © 2026 • Desenvolvido para um agronegócio consciente.
     </p>
   </footer>
 
   <script>
+    // Intersection Observer para as animações de scroll
     const sections = document.querySelectorAll('.section');
     
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, index * 200);
+          entry.target.classList.add('visible');
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.2 });
 
     sections.forEach(section => observer.observe(section));
+
+    // Garantia extra de Smooth Scroll para navegadores antigos
+    document.getElementById('btnScroll').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
   </script>
 
 </body>
