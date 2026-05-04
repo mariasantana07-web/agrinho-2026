@@ -6,30 +6,33 @@ Este projeto foi desenvolvido para o **Programa Agrinho 2026**, com o objetivo d
 
 ---
 
+## 🔗 Link do Projeto
+Você pode visualizar o site em tempo real aqui:  
+👉 **[mariasantana07-web.github.io/agrinho-2026/](https://mariasantana07-web.github.io/agrinho-2026/)**
+
+---
+
 ## 🚀 Sobre o Projeto
 
-O site é uma plataforma educativa interativa que utiliza tecnologias web modernas para apresentar os pilares da agricultura sustentável. O foco é mostrar como o campo e a tecnologia caminham juntos para garantir a preservação dos recursos naturais e a segurança alimentar.
+O site é uma plataforma educativa interativa que apresenta os pilares da agricultura sustentável de forma moderna e atraente. O foco é demonstrar como o campo e a tecnologia caminham juntos para garantir a preservação dos recursos naturais e a segurança alimentar.
 
 ## ✨ Funcionalidades
 
-* **Design Premium & Responsivo:** Adaptado para celulares, tablets e computadores.
-* **Animações de Scroll (Revelação):** Conteúdo que surge suavemente conforme a navegação.
-* **Interface Glassmorphism:** Estética moderna com efeitos de transparência e cores da terra.
-* **Informações Técnicas:** Seções detalhadas sobre Bioinsumos, Plantio Direto e Agricultura Digital.
-* **Guia de Missão:** Dicas práticas de como a comunidade pode contribuir com o meio ambiente.
+* **Design Premium & Responsivo:** Interface otimizada para computadores e dispositivos móveis.
+* **Animações de Scroll (Revelação):** Conteúdo que surge suavemente conforme a navegação para uma experiência imersiva.
+* **Interface Moderna:** Estética baseada em *Glassmorphism*, cores orgânicas e tipografia limpa.
+* **Conteúdo Técnico:** Seções detalhadas sobre Bioinsumos, Plantio Direto, Rotação de Culturas e Tecnologia no Campo.
+* **Missão e Ação:** Guia prático de como a comunidade e a escola podem atuar na preservação.
 
 ## 🛠️ Tecnologias Utilizadas
 
-Para este projeto, foram utilizadas as seguintes tecnologias:
+* **HTML5:** Estrutura semântica.
+* **CSS3:** Estilização avançada, animações (keyframes) e layouts responsivos (Grid/Flexbox).
+* **JavaScript:** Lógica de manipulação de DOM para animações de entrada e scroll suave.
+* **Google Fonts:** Fontes *Plus Jakarta Sans* e *Space Grotesk*.
 
-* **HTML5:** Estrutura semântica do conteúdo.
-* **CSS3:** Estilização avançada, animações e layout (Flexbox/Grid).
-* **JavaScript:** Lógica de revelação de seções ao rolar a página e controle de scroll suave.
-* **Google Fonts:** Tipografias modernas (*Plus Jakarta Sans* e *Space Grotesk*).
+## 📂 Como visualizar localmente
 
-## 📂 Como visualizar o projeto
-
-1- Copie o link abaixo e cole na aba de pesquisa do Google.
-
+1. Clone este repositório:
    ```bash
-   git clone [https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git](https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git)
+   git clone [https://github.com/mariasantana07-web/agrinho-2026.git](https://github.com/mariasantana07-web/agrinho-2026.git)
