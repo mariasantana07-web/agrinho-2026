@@ -32,4 +32,4 @@ Para este projeto, foram utilizadas as seguintes tecnologias:
 1- Copie o link abaixo e cole na aba de pesquisa do Google.
 
    ```bash
-   git clone [https://mariasantana07-web.github.io/agrinho-2026/]
+   git clone [https://github.com/mariasantana07-web/agrinho-2026.git](https://github.com/mariasantana07-web/agrinho-2026.git)
