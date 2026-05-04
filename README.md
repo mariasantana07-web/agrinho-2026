@@ -30,9 +30,3 @@ O site é uma plataforma educativa interativa que apresenta os pilares da agricu
 * **CSS3:** Estilização avançada, animações (keyframes) e layouts responsivos (Grid/Flexbox).
 * **JavaScript:** Lógica de manipulação de DOM para animações de entrada e scroll suave.
 * **Google Fonts:** Fontes *Plus Jakarta Sans* e *Space Grotesk*.
-
-## 📂 Como visualizar localmente
-
-1. Clone este repositório:
-   ```bash
-   git clone [https://github.com/mariasantana07-web/agrinho-2026.git](https://github.com/mariasantana07-web/agrinho-2026.git)
