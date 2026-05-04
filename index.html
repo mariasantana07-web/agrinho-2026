@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agrinho 2026 • Maria Eduarda</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -15,6 +15,7 @@
             --text: #1b4332;
             --bg: #f0f4f1;
             --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.8);
         }
 
         * {
@@ -39,7 +40,7 @@
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed;
+                        url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -51,31 +52,31 @@
 
         .hero h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(3rem, 10vw, 5rem);
+            font-size: clamp(2.8rem, 8vw, 5rem);
             line-height: 1.1;
             margin-bottom: 1.5rem;
             animation: fadeIn 1.5s ease;
         }
 
         .hero p {
-            font-size: clamp(1rem, 4vw, 1.5rem);
-            max-width: 700px;
+            font-size: clamp(1rem, 4vw, 1.4rem);
+            max-width: 800px;
             font-weight: 300;
             opacity: 0.9;
         }
 
-        /* --- Seções Estilizadas --- */
+        /* --- Seções e Layout --- */
         .content {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 80px 25px;
+            padding: 40px 25px;
         }
 
         .reveal {
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s ease-out;
-            margin-bottom: 100px;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+            margin-bottom: 120px;
         }
 
         .reveal.active {
@@ -85,13 +86,22 @@
 
         .section-title {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--primary);
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
             text-align: center;
         }
 
-        /* --- Grid de Cards --- */
+        .subtitle {
+            text-align: center;
+            color: var(--secondary);
+            margin-bottom: 3rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- Grid de Informações --- */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -100,133 +110,144 @@
 
         .card {
             background: var(--white);
-            padding: 40px;
+            padding: 35px;
             border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            border: 1px solid rgba(0,0,0,0.03);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.02);
+            transition: 0.4s;
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(11, 61, 46, 0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(11, 61, 46, 0.08);
         }
 
         .card h3 {
             color: var(--secondary);
-            font-size: 1.5rem;
             margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        /* --- Destaque Lateral (Imagem + Texto) --- */
+        .split-section {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 4rem;
+            flex-wrap: wrap;
         }
 
-        /* --- Galeria --- */
-        .image-box {
-            width: 100%;
-            height: 500px;
+        .split-text { flex: 1; min-width: 300px; }
+        .split-img { 
+            flex: 1; 
+            min-width: 300px;
             border-radius: 30px;
             overflow: hidden;
-            margin-bottom: 2rem;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
-        .image-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 1s ease;
+        .split-img img { width: 100%; display: block; transition: 1s; }
+        .split-img:hover img { transform: scale(1.05); }
+
+        /* --- Badge Sustentável --- */
+        .info-pill {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
         }
 
-        .image-box:hover img {
-            transform: scale(1.1);
-        }
-
-        /* --- Footer Especial --- */
+        /* --- Footer --- */
         footer {
             background: var(--primary);
             color: var(--white);
-            padding: 80px 20px 40px;
+            padding: 60px 20px 40px;
             text-align: center;
-            border-radius: 50px 50px 0 0;
+            border-radius: 60px 60px 0 0;
         }
 
         .back-to-top {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
             background: var(--accent);
-            color: var(--primary);
+            border: none;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            text-decoration: none;
-            font-size: 1.5rem;
+            color: var(--primary);
+            font-size: 1.2rem;
+            cursor: pointer;
             margin-bottom: 30px;
             transition: 0.3s;
-            cursor: pointer;
-            border: none;
         }
 
-        .back-to-top:hover {
-            transform: scale(1.1) rotate(-10deg);
-            background: var(--white);
-        }
+        .back-to-top:hover { transform: scale(1.1); background: var(--white); }
 
         .signature {
             margin-top: 40px;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             letter-spacing: 2px;
-            text-transform: uppercase;
-            opacity: 0.8;
-        }
-
-        /* Animação */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            opacity: 0.9;
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.8rem; }
-            .image-box { height: 300px; }
+            .split-section { gap: 2rem; }
+            .section-title { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
-    <section class="hero" id="topo">
-        <h1>O Futuro é Verde</h1>
-        <p>Inovação, sustentabilidade e tecnologia transformando o campo para as próximas gerações.</p>
+    <section class="hero">
+        <h1>Conexão Campo & Cidade</h1>
+        <p>A sustentabilidade começa na educação e floresce em cada hectare preservado.</p>
     </section>
 
     <div class="content">
         
-        <section class="reveal">
-            <h2 class="section-title">Equilíbrio Vital</h2>
-            <div class="image-box">
-                <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=1200&q=80" alt="Natureza e Agro">
+        <section class="reveal split-section">
+            <div class="split-text">
+                <span class="info-pill">VISÃO 2026</span>
+                <h2 style="font-family: 'Space Grotesk'; color: var(--primary); font-size: 2.2rem; margin-bottom: 1.5rem;">Produção com Consciência</h2>
+                <p>O agronegócio moderno vai além da colheita. Ele envolve o uso de **Bioinsumos** (defensivos naturais), o monitoramento via satélite e a recuperação de nascentes. Produzir de forma sustentável significa garantir que as gerações futuras tenham os mesmos recursos que temos hoje.</p>
             </div>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem;">
-                A agricultura moderna não escolhe entre produzir e preservar. Ela faz os dois. Através do manejo inteligente, garantimos solo fértil e biodiversidade preservada para o amanhã.
-            </p>
+            <div class="split-img">
+                <img src="https://images.unsplash.com/photo-1595113316349-9fa4ee24f884?auto=format&fit=crop&w=800&q=80" alt="Tecnologia no Campo">
+            </div>
         </section>
 
         <section class="reveal">
-            <h2 class="section-title">Pilares do Amanhã</h2>
+            <h2 class="section-title">Inovações que Transformam</h2>
+            <p class="subtitle">Tecnologia a serviço da natureza</p>
             <div class="grid">
                 <div class="card">
-                    <h3>🛰️ Tecnologia</h3>
-                    <p>Drones e sensores que monitoram a saúde da planta folha por folha, reduzindo desperdícios.</p>
+                    <h3>🌳 ILPF</h3>
+                    <p>Integração Lavoura-Pecuária-Floresta. Um sistema que une árvores, gado e plantações na mesma área, melhorando o clima e o solo.</p>
                 </div>
                 <div class="card">
-                    <h3>💧 Água Viva</h3>
-                    <p>Sistemas de reaproveitamento e irrigação por gotejamento que protegem nossos rios.</p>
+                    <h3>🛰️ Agricultura Digital</h3>
+                    <p>Uso de GPS e sensores para aplicar água e fertilizantes apenas onde é necessário, evitando qualquer tipo de desperdício.</p>
                 </div>
                 <div class="card">
-                    <h3>♻️ Regeneração</h3>
-                    <p>O solo não é apenas suporte, é vida. O plantio direto devolve nutrientes à terra naturalmente.</p>
+                    <h3>🐝 Polinizadores</h3>
+                    <p>A preservação de abelhas e insetos nativos aumenta a produtividade das lavouras em até 30% de forma natural.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="reveal" style="background: var(--white); padding: 50px; border-radius: 40px; text-align: center;">
+            <h2 class="section-title">O Papel da Educação</h2>
+            <p style="max-width: 800px; margin: 0 auto 30px;">O Programa Agrinho é o elo entre o conhecimento científico e a prática no campo. Ao ensinar crianças sobre ética, meio ambiente e cidadania, formamos adultos capazes de liderar um futuro mais verde.</p>
+            <div class="grid" style="margin-top: 40px;">
+                <div style="text-align: center;">
+                    <h4 style="font-size: 2rem; color: var(--secondary);">80%</h4>
+                    <p>Mais eficiência no uso de água com novas tecnologias.</p>
+                </div>
+                <div style="text-align: center;">
+                    <h4 style="font-size: 2rem; color: var(--secondary);">100%</h4>
+                    <p>Comprometimento com o Código Florestal Brasileiro.</p>
                 </div>
             </div>
         </section>
@@ -234,39 +255,28 @@
     </div>
 
     <footer>
-        <button onclick="scrollToTop()" class="back-to-top" title="Voltar ao início">↑</button>
+        <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="back-to-top">↑</button>
         
-        <p style="font-size: 1.4rem; font-weight: 700;">Agrinho 2026</p>
-        <p style="opacity: 0.7; margin-bottom: 20px;">Semeando ideias, colhendo um mundo melhor.</p>
-        
-        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); max-width: 300px; margin: 0 auto;">
-        
+        <div style="max-width: 600px; margin: 0 auto;">
+            <p style="font-size: 1.5rem; font-weight: 700; margin-bottom: 10px;">AGRINHO 2026</p>
+            <p style="opacity: 0.8;">Saber e atuar para transformar o mundo. Este é o nosso compromisso com o planeta.</p>
+        </div>
+
         <div class="signature">
+            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px auto; max-width: 200px;">
             Agrinho 2026 - Maria Eduarda
         </div>
     </footer>
 
     <script>
-        // Função para o scroll suave ao topo
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        // Sistema de revelação das seções ao rolar a página
-        const observerOptions = {
-            threshold: 0.2
-        };
-
+        // Animação de revelação ao rolar
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
